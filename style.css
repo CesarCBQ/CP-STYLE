@@ -1,83 +1,49 @@
-/* Fuente elegante minimalista */
+/* ---- Estilos base ---- */
 body {
-    font-family: "Helvetica Neue", Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #f5f0e8, #e4d5c7);
-    color: #3e2f2f;
-}
-
-/* Contenedor central */
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f0e9;   /* beige suave */
+    color: #3b2c2c;              /* café oscuro */
+    line-height: 1.6;
 }
 
 /* Títulos */
 h1 {
     text-align: center;
-    color: #2c1d18;
-    font-size: 2.5rem;
-    margin-top: 20px;
+    font-size: 2rem;
+    padding: 1rem;
+    color: #2a1d1d;
 }
 
-.Titulo {
-    text-align: center;
-    color: #4a3325;
-    margin: 20px 0;
-    font-size: 1.2rem;
-}
-
-/* Texto */
-.Description {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 15px;
-    border-radius: 10px;
-    line-height: 1.6;
-}
-/* Contenedor de la imagen de inicio */
+/* Banner de inicio */
 .Inicio {
+    width: 100%;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
-    max-width: 1000px;   /* ancho máximo para que no se vea gigante */
-    border-radius: 15px;
-    overflow: hidden;    /* recorta bordes redondeados */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
-/* Imagen dentro de Inicio */
 .Inicio img {
-    width: 100%;          /* ocupa todo el ancho del contenedor */
-    height: auto;         /* mantiene proporciones */
-    border-radius: 15px;  /* bordes redondeados */
-    object-fit: cover;    /* recorta si es muy alta o ancha */
-    transition: transform 0.4s ease, filter 0.4s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
-/* Efecto hover (zoom + brillo suave) */
-.Inicio img:hover {
-    transform: scale(1.05);
-    filter: brightness(1.05);
-}
-
-/* Carrusel scroll horizontal */
+/* Sección de productos */
 .Imagenes {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
 }
 
 .Imagenes img {
-    width: 250px;
+    width: 100%;
     height: auto;
-    border-radius: 12px;
-    scroll-snap-align: center;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -85,19 +51,40 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Contacto */
-.contacto {
-    text-align: center;
-    margin-top: 25px;
-    font-size: 1.1rem;
+/* ---- Responsive ---- */
+
+/* Pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .Inicio {
+        height: 60vh; /* más pequeño para móviles */
+    }
+
+    .Description {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        text-align: justify;
+    }
+
+    .Imagenes {
+        grid-template-columns: 1fr; /* imágenes una debajo de la otra */
+    }
 }
 
-.contacto a {
-    color: #6b4226;
-    font-weight: bold;
-    text-decoration: none;
-}
+/* Tablets y medianas */
+@media (min-width: 769px) and (max-width: 1200px) {
+    h1 {
+        font-size: 1.8rem;
+    }
 
-.contacto a:hover {
-    text-decoration: underline;
+    .Inicio {
+        height: 70vh;
+    }
+
+    .Imagenes {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
 }
