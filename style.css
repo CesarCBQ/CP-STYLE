@@ -1,0 +1,77 @@
+/* Fuente elegante minimalista */
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f0e8, #e4d5c7);
+    color: #3e2f2f;
+}
+
+/* Contenedor central */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Títulos */
+h1 {
+    text-align: center;
+    color: #2c1d18;
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+.Titulo {
+    text-align: center;
+    color: #4a3325;
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+/* Texto */
+.Description {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+/* Carrusel scroll horizontal */
+.Imagenes {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 15px 0;
+}
+
+.Imagenes img {
+    width: 250px;
+    height: auto;
+    border-radius: 12px;
+    scroll-snap-align: center;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.Imagenes img:hover {
+    transform: scale(1.05);
+}
+
+/* Contacto */
+.contacto {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.1rem;
+}
+
+.contacto a {
+    color: #6b4226;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contacto a:hover {
+    text-decoration: underline;
+}
