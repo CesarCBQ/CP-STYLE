@@ -36,6 +36,32 @@ h1 {
     border-radius: 10px;
     line-height: 1.6;
 }
+/* Contenedor de la imagen de inicio */
+.Inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 1000px;   /* ancho máximo para que no se vea gigante */
+    border-radius: 15px;
+    overflow: hidden;    /* recorta bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen dentro de Inicio */
+.Inicio img {
+    width: 100%;          /* ocupa todo el ancho del contenedor */
+    height: auto;         /* mantiene proporciones */
+    border-radius: 15px;  /* bordes redondeados */
+    object-fit: cover;    /* recorta si es muy alta o ancha */
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Efecto hover (zoom + brillo suave) */
+.Inicio img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
 
 /* Carrusel scroll horizontal */
 .Imagenes {
