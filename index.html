@@ -9,84 +9,45 @@
 </head>
 <body>
   <header>
-    <h1>✨ ACCESORIOS ✨</h1>
-    <img class="Inicio" src="Imagenes/cp.jpg" alt="Icono principal de CP Style">
+    <h1>ACCESORIOS</h1>
+    <img class="Inicio" src="Imagenes/cp.jpg" alt="Icono principal">
   </header>
 
   <main class="container">
-    <h2 class="Titulo">🌟 JUEGO CADENA Y PULSERA ACERO INOXIDABLE | NUEVO | CAJA DE REGALO 🌟</h2>
-    
+    <h2 class="Titulo">🌟 JUEGO CADENA Y PULSERA ACERO INOXIDABLE 🌟</h2>
     <p class="Description">
       ✨ Juego de Cadena + Pulsera en Acero Inoxidable 316L ✨<br><br>
-      Un accesorio elegante y resistente, ideal para regalar en una ocasión especial o para darte un gusto único.<br><br>
-      
-      🔹 <b>¿Por qué elegir este set?</b><br><br>
-      ✔ Material Premium: Acero Inoxidable 316L de grado quirúrgico.<br>
-      ✔ 100% Antialérgico: Seguro para todo tipo de piel.<br>
-      ✔ A prueba de agua: No se oxida ni pierde el color.<br>
-      ✔ Durabilidad garantizada: Nunca se ennegrece.<br>
-      ✔ Presentación exclusiva: Incluye caja de regalo lista para entregar 🎁.<br><br>
-      
-      📦 <b>Modalidades de entrega</b><br>
-      - Contraentrega local<br>
-      - Envíos a todo Colombia por Servientrega o transportadora<br><br>
-      
-      💰 <b>Precio Especial:</b> <span class="precio">$44.900</span><br>
-      Producto 100% nuevo y garantizado.
+      ✔ Material Premium<br>
+      ✔ Antialérgico<br>
+      ✔ A prueba de agua<br>
+      ✔ Durabilidad garantizada<br>
+      ✔ Incluye caja de regalo 🎁
     </p>
 
     <!-- Carrusel -->
-    <div class="carousel">
-      <div class="carousel-track">
+    <section class="carrusel">
+      <div class="carrusel-track">
         <img src="Imagenes/cajitaderegalo.jpg" alt="Caja de regalo">
-        <img src="Imagenes/cadenasola.jpg" alt="Cadena sola plateada">
+        <img src="Imagenes/cadenasola.jpg" alt="Cadena sola">
         <img src="Imagenes/pulsera.jpg" alt="Pulsera con padrenuestro">
-        <img src="Imagenes/pulseraycadena.jpg" alt="Conjunto cadena y pulsera">
+        <img src="Imagenes/pulseraycadena.jpg" alt="Set completo">
       </div>
-      <button class="carousel-btn prev">❮</button>
-      <button class="carousel-btn next">❯</button>
-    </div>
+      <button class="carrusel-btn prev">&#10094;</button>
+      <button class="carrusel-btn next">&#10095;</button>
+    </section>
 
     <p class="contacto">
       💬 ¿Quieres el tuyo o tienes preguntas?<br>
-      ¡Escríbeme ahora mismo! 📲 <br>
-      <a class="btn" href="https://forms.gle/gTFnxx1PAZsn8xru8" target="_blank">👉 Ordenar Ahora</a>  
-      o WhatsApp al <b>+57 3107604786</b>
+      ¡Escríbeme ahora mismo! 📲<br>
+      <a href="https://forms.gle/gTFnxx1PAZsn8xru8" class="btn-form">Llenar Formulario</a>
     </p>
   </main>
 
   <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/573107604786" class="whatsapp-float" target="_blank">
-    💬
+  <a href="https://wa.me/573107604786" target="_blank" class="whatsapp-float">
+    <img src="Imagenes/WhatsApp.png" alt="WhatsApp">
   </a>
 
-  <!-- Script carrusel -->
-  <script>
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const nextButton = document.querySelector('.next');
-    const prevButton = document.querySelector('.prev');
-    let currentIndex = 0;
-
-    function updateCarousel(index) {
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    nextButton.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateCarousel(currentIndex);
-    });
-
-    prevButton.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      updateCarousel(currentIndex);
-    });
-
-    // Auto-slide
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateCarousel(currentIndex);
-    }, 4000);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

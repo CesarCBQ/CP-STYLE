@@ -5,151 +5,114 @@
   box-sizing: border-box;
 }
 
-/* Body */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f9f9f9;
+  font-family: Arial, sans-serif;
+  background: #f8f5f2;
   color: #333;
   line-height: 1.6;
-  text-align: center;
-  padding: 10px;
+  overflow-x: hidden;
 }
 
-/* Header */
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #111;
+h1 {
+  text-align: center;
+  margin: 1rem 0;
+  color: #6b4226;
 }
 
 .Inicio {
-  width: 100%;
-  max-width: 250px; /* más pequeña en PC */
+  display: block;
+  margin: 0 auto;
+  max-width: 150px; /* en PC ya no gigante */
   height: auto;
   border-radius: 10px;
-  margin: 10px auto;
-  display: block;
-  object-fit: contain;
 }
 
-/* Container */
 .container {
+  padding: 1rem;
   max-width: 900px;
   margin: auto;
-  padding: 15px;
-}
-
-/* Title */
-.Titulo {
-  font-size: 1.4rem;
-  margin: 15px 0;
-  color: #222;
-}
-
-/* Description */
-.Description {
-  font-size: 1rem;
-  margin: 15px 0;
-  text-align: justify;
-}
-
-.precio {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #e63946;
 }
 
 /* Carrusel */
-.carousel {
+.carrusel {
   position: relative;
   overflow: hidden;
-  max-width: 600px;
-  margin: 20px auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin: 2rem 0;
 }
 
-.carousel-track {
+.carrusel-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
 
-.carousel img {
-  min-width: 100%;
-  height: auto;
-  object-fit: cover;
+.carrusel img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 12px;
+  flex-shrink: 0;
 }
 
-.carousel-btn {
+.carrusel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  border: none;
+  background: rgba(107, 66, 38, 0.7);
   color: white;
+  border: none;
   font-size: 2rem;
-  padding: 5px 10px;
+  padding: 0.5rem;
   cursor: pointer;
   border-radius: 50%;
 }
 
-.carousel-btn.prev {
+.carrusel-btn.prev {
   left: 10px;
 }
-.carousel-btn.next {
+.carrusel-btn.next {
   right: 10px;
 }
 
 /* Contacto */
-.contacto {
-  margin-top: 20px;
-  font-size: 1rem;
-}
-
-.btn {
+.btn-form {
   display: inline-block;
-  background: #111;
-  color: #fff;
-  padding: 12px 24px;
-  margin-top: 10px;
+  background: #6b4226;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
   text-decoration: none;
-  border-radius: 6px;
-  transition: 0.3s;
-  font-weight: bold;
+  margin-top: 1rem;
+}
+.btn-form:hover {
+  background: #8a5b3c;
 }
 
-.btn:hover {
-  background: #e63946;
-}
-
-/* WhatsApp flotante */
+/* Botón flotante WhatsApp */
 .whatsapp-float {
   position: fixed;
-  width: 55px;
-  height: 55px;
   bottom: 20px;
   right: 20px;
-  background: #25d366;
-  color: white;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+}
+.whatsapp-float img {
+  width: 100%;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.8rem;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-  z-index: 999;
-  text-decoration: none;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .Titulo {
-    font-size: 1.1rem;
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .carrusel img {
+    max-width: 400px;
   }
-  .Description {
-    font-size: 0.95rem;
-  }
+}
+@media (min-width: 1024px) {
   .Inicio {
-    max-width: 180px; /* más control en celulares */
+    max-width: 120px; /* más chico en pantallas grandes */
+  }
+  .carrusel img {
+    max-width: 250px; /* todas parejas en PC */
   }
 }
