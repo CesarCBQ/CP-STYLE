@@ -1,94 +1,107 @@
-/* ---- Estilos base ---- */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f0e9;   /* Beige suave */
-    color: #3b2c2c;              /* Café oscuro */
-    line-height: 1.6;
-    width: 100%;                 /* Que ocupe todo el ancho */
-    overflow-x: hidden;          /* Solo oculta scroll horizontal */
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+  padding: 10px;
 }
 
-/* Contenedor principal */
-.container {
-    width: 100%;
-    max-width: 1200px; 
-    margin: 0 auto;
-    padding: 1rem;
-    box-sizing: border-box;
+/* Header */
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #111;
 }
 
-/* Títulos */
-h1 {
-    text-align: center;
-    font-size: 2rem;
-    padding: 1rem;
-    color: #2a1d1d;
-}
-
-/* Imagen principal Inicio */
 .Inicio {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;  /* evita cortes feos */
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  margin: 10px auto;
+  display: block;
+  object-fit: contain;
 }
 
-.Inicio img {
-    width: 100%;
-    height: auto;
-    max-height: 90vh;  /* nunca ocupa más que la pantalla */
-    object-fit: contain; /* asegura que no corte la imagen */
-    border-radius: 0;
+/* Container */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 15px;
 }
 
-/* Texto descriptivo */
+/* Title */
+.Titulo {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  color: #222;
+}
+
+/* Description */
 .Description {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 1rem 0;
-    font-size: 1rem;
+  font-size: 1rem;
+  margin: 15px 0;
+  text-align: justify;
 }
 
-/* Galería de productos */
+/* Carrusel */
 .Imagenes {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  margin: 20px 0;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
 }
 
 .Imagenes img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  object-fit: cover;
 }
 
-.Imagenes img:hover {
-    transform: scale(1.05);
+/* Contacto */
+.contacto {
+  margin-top: 20px;
+  font-size: 1rem;
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.5rem;
-    }
+.btn {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
 
-    .Inicio img {
-        max-height: 70vh; /* más ajustado en móviles */
-        object-fit: contain; /* no corta la imagen */
-    }
+.btn:hover {
+  background: #444;
+}
 
-    .Description {
-        font-size: 0.95rem;
-        padding: 0.8rem;
-        text-align: justify;
-    }
-
-    .Imagenes {
-        grid-template-columns: 1fr; /* en móviles, 1 columna */
-    }
+/* Responsive */
+@media (max-width: 600px) {
+  .Titulo {
+    font-size: 1.1rem;
+  }
+  .Description {
+    font-size: 0.95rem;
+  }
+  .Imagenes img {
+    width: 200px;
+  }
 }
