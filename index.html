@@ -31,24 +31,62 @@
       - Contraentrega local<br>
       - Envíos a todo Colombia por Servientrega o transportadora<br><br>
       
-      💰 <b>Precio Especial:</b> $44.900<br>
+      💰 <b>Precio Especial:</b> <span class="precio">$44.900</span><br>
       Producto 100% nuevo y garantizado.
     </p>
 
-    <!-- Carrusel scrollable -->
-    <div class="Imagenes">
-      <img src="Imagenes/cajitaderegalo.jpg" alt="Caja de regalo">
-      <img src="Imagenes/cadenasola.jpg" alt="Cadena sola plateada">
-      <img src="Imagenes/pulsera.jpg" alt="Pulsera con padrenuestro">
-      <img src="Imagenes/pulseraycadena.jpg" alt="Conjunto cadena y pulsera">
+    <!-- Carrusel -->
+    <div class="carousel">
+      <div class="carousel-track">
+        <img src="Imagenes/cajitaderegalo.jpg" alt="Caja de regalo">
+        <img src="Imagenes/cadenasola.jpg" alt="Cadena sola plateada">
+        <img src="Imagenes/pulsera.jpg" alt="Pulsera con padrenuestro">
+        <img src="Imagenes/pulseraycadena.jpg" alt="Conjunto cadena y pulsera">
+      </div>
+      <button class="carousel-btn prev">❮</button>
+      <button class="carousel-btn next">❯</button>
     </div>
 
     <p class="contacto">
       💬 ¿Quieres el tuyo o tienes preguntas?<br>
       ¡Escríbeme ahora mismo! 📲 <br>
-      <a class="btn" href="https://forms.gle/gTFnxx1PAZsn8xru8">Formulario</a>  
+      <a class="btn" href="https://forms.gle/gTFnxx1PAZsn8xru8" target="_blank">👉 Ordenar Ahora</a>  
       o WhatsApp al <b>+57 3107604786</b>
     </p>
   </main>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/573107604786" class="whatsapp-float" target="_blank">
+    💬
+  </a>
+
+  <!-- Script carrusel -->
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+    let currentIndex = 0;
+
+    function updateCarousel(index) {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel(currentIndex);
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel(currentIndex);
+    });
+
+    // Auto-slide
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel(currentIndex);
+    }, 4000);
+  </script>
 </body>
 </html>
