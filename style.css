@@ -1,20 +1,22 @@
 /* ---- Estilos base ---- */
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f5f0e9;   /* Beige suave */
     color: #3b2c2c;              /* Café oscuro */
     line-height: 1.6;
-    max-width: 100%;             /* Que nunca se corte en móvil */
-    overflow-x: hidden;          /* Evita scroll horizontal feo */
+    width: 100%;                 /* Que ocupe todo el ancho */
+    overflow-x: hidden;          /* Solo oculta scroll horizontal */
 }
 
 /* Contenedor principal */
 .container {
     width: 100%;
-    max-width: 1200px;   /* En pantallas grandes no se estira infinito */
+    max-width: 1200px; 
     margin: 0 auto;
     padding: 1rem;
+    box-sizing: border-box;
 }
 
 /* Títulos */
@@ -25,20 +27,21 @@ h1 {
     color: #2a1d1d;
 }
 
-/* Banner de inicio */
+/* Imagen principal Inicio */
 .Inicio {
     width: 100%;
-    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;  /* evita cortes feos */
 }
 
 .Inicio img {
     width: 100%;
     height: auto;
-    object-fit: cover;
-    border-radius: 8px;
+    max-height: 90vh;  /* nunca ocupa más que la pantalla */
+    object-fit: contain; /* asegura que no corte la imagen */
+    border-radius: 0;
 }
 
 /* Texto descriptivo */
@@ -74,13 +77,18 @@ h1 {
         font-size: 1.5rem;
     }
 
+    .Inicio img {
+        max-height: 70vh; /* más ajustado en móviles */
+        object-fit: contain; /* no corta la imagen */
+    }
+
     .Description {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         padding: 0.8rem;
         text-align: justify;
     }
 
     .Imagenes {
-        grid-template-columns: 1fr; /* Solo 1 columna en móviles */
+        grid-template-columns: 1fr; /* en móviles, 1 columna */
     }
 }
