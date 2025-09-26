@@ -116,3 +116,46 @@ h1 {
     max-width: 250px; /* todas parejas en PC */
   }
 }
+/* Menú principal */
+.menu {
+  margin-top: 10px;
+}
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 0;
+}
+.menu ul li {
+  position: relative;
+}
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+.menu a:hover {
+  color: #0077cc;
+}
+
+/* Submenú desplegable */
+.submenu-items {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  list-style: none;
+  padding: 10px 0;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+}
+.submenu-items li {
+  padding: 5px 20px;
+}
+.submenu-items li a {
+  color: #333;
+}
+.submenu:hover .submenu-items {
+  display: block;
+}
