@@ -19,5 +19,13 @@ prevBtn.addEventListener('click', () => {
   index = (index - 1 + images.length) % images.length;
   updateCarousel();
 });
+nextBtn.addEventListener('click', () => {
+  Cadenas = (Cadenas + 1) % images.length;
+  updateCarousel();
+});
+prevBtn.addEventListener('click', () => {
+  Cadenas = (Cadenas - 1 + images.length) % images.length;
+  updateCarousel();
+});
 
 window.addEventListener('resize', updateCarousel);
