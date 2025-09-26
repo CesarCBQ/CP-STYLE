@@ -1,0 +1,294 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f5f2;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-top: 70px; /* Espacio para el menú fijo */
+}
+
+/* Banner inicial */
+.hero-img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+.hero-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #5a3d2b;
+}
+
+/* Logo */
+.logo-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.Inicio {
+  max-width: 180px;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Estilo más grande solo en cadenas */
+.Inicio.grande {
+  max-width: 350px;
+  margin-top: 20px;
+}
+
+/* Encabezado con fondo */
+.header {
+  background-image: url("Imagenes/cp.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 250px;
+}
+
+/* Menú de navegación */
+.navbar {
+  z-index: 10;
+}
+
+.menu {
+  background: #fff;
+  border-bottom: 2px solid #ddd;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+}
+
+.menu ul li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 15px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.menu a:hover {
+  background: #6b4226;
+  color: #fff;
+  border-radius: 6px;
+}
+
+/* Submenú */
+.submenu-items {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #fff;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 50;
+}
+
+.submenu-items li a {
+  padding: 10px 20px;
+  font-weight: normal;
+}
+
+.submenu-items li a:hover {
+  background: #f5f5f5;
+  color: #6b4226;
+}
+
+.submenu:hover .submenu-items {
+  display: block;
+}
+
+/* Carrusel */
+.carrusel {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.carrusel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carrusel img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(107, 66, 38, 0.7);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carrusel-btn.prev {
+  left: 10px;
+}
+
+.carrusel-btn.next {
+  right: 10px;
+}
+
+/* Contacto */
+.contacto {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-form {
+  display: inline-block;
+  background: #6b4226;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.btn-form:hover {
+  background: #8a5b3c;
+}
+
+/* Botón flotante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+}
+
+.whatsapp-float img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Banner Hero (opcional alternativo con texto centrado) */
+.hero-banner {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f5f2;
+  margin-top: 56px;
+}
+
+.hero-banner img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+}
+
+/* Imagen inicio pantalla completa */
+.imagen-inicio {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 56px;
+  position: relative;
+  z-index: -1;
+}
+
+.imagen-inicio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .carrusel img {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .carrusel img {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Inicio {
+    max-width: 120px;
+  }
+
+  .carrusel img {
+    max-width: 250px;
+  }
+}
