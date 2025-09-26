@@ -190,42 +190,46 @@ h1 {
   width: 100%;
   height: 250px; /* Ajusta este valor según lo que quieras que se vea */
 }
-/* ===== HERO SECTION ===== */
-.hero-section {
-  width: 100%;
-  height: 100vh; /* pantalla completa */
-  background-image: url("Imagenes/cp.jpg");
-  background-size: cover;       /* llena todo el espacio */
-  background-position: center;  /* siempre centrada */
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
+/* Banner */
+.hero-banner {
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* Fondo semitransparente opcional para texto */
-.hero-overlay {
-  background: rgba(0, 0, 0, 0.4);
+.hero-banner img {
+  width: 100%;
+  height: auto;            /* mantiene proporciones */
+  object-fit: cover;       /* rellena sin deformar */
+  object-position: center; /* centrada siempre */
+  display: block;
+}
+
+/* Texto encima de la imagen */
+.hero-text {
+  position: absolute;
+  top: 50%;                /* centrado vertical */
+  left: 50%;               /* centrado horizontal */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4); /* fondo semitransparente */
   padding: 20px 40px;
   border-radius: 10px;
 }
 
-.hero-title {
+.hero-text h1 {
   font-size: 3rem;
-  font-weight: bold;
   margin-bottom: 10px;
 }
 
-.hero-subtitle {
+.hero-text p {
   font-size: 1.5rem;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 768px) {
-  .hero-title { font-size: 2rem; }
-  .hero-subtitle { font-size: 1rem; }
+  .hero-text h1 { font-size: 2rem; }
+  .hero-text p { font-size: 1rem; }
 }
 
