@@ -22,9 +22,9 @@ h1 {
 .Inicio {
   display: block;
   margin: 0 auto;
-  max-width: 150px; /* en PC ya no gigante */
+  max-width: 240px; /* en PC ya no gigante */
   height: auto;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .container {
@@ -118,7 +118,7 @@ h1 {
 }
 /* Menú principal */
 .menu {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .menu ul {
   list-style: none;
