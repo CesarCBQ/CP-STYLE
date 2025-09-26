@@ -22,7 +22,7 @@ h1 {
 .Inicio {
   display: block;
   margin: 0 auto;
-  max-width: 240px; /* en PC ya no gigante */
+  max-width: 500px; /* en PC ya no gigante */
   height: auto;
   border-radius: 20px;
 }
