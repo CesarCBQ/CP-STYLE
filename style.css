@@ -12,24 +12,76 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
+/* Logo */
+.logo-container {
   text-align: center;
-  margin: 1rem 0;
-  color: #6b4226;
+  margin: 20px 0;
 }
-
 .Inicio {
-  display: block;
-  margin: 0 auto;
-  max-width: 200px; /* en PC ya no gigante */
+  max-width: 180px;
   height: auto;
   border-radius: 20px;
 }
+h1 {
+  color: #6b4226;
+  font-size: 2rem;
+  margin-top: 10px;
+}
 
-.container {
-  padding: 1rem;
-  max-width: 900px;
-  margin: auto;
+/* Menú principal */
+.menu {
+  background: #fff;
+  border-bottom: 2px solid #ddd;
+}
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+}
+.menu ul li {
+  position: relative;
+}
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 15px;
+  display: block;
+  transition: all 0.3s ease;
+}
+.menu a:hover {
+  background: #6b4226;
+  color: #fff;
+  border-radius: 6px;
+}
+
+/* Submenú */
+.submenu-items {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #fff;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 50;
+}
+.submenu-items li a {
+  padding: 10px 20px;
+  font-weight: normal;
+}
+.submenu-items li a:hover {
+  background: #f5f5f5;
+  color: #6b4226;
+}
+.submenu:hover .submenu-items {
+  display: block;
 }
 
 /* Carrusel */
@@ -38,12 +90,10 @@ h1 {
   overflow: hidden;
   margin: 2rem 0;
 }
-
 .carrusel-track {
   display: flex;
   transition: transform 0.4s ease-in-out;
 }
-
 .carrusel img {
   width: 100%;
   max-width: 300px;
@@ -51,7 +101,6 @@ h1 {
   border-radius: 12px;
   flex-shrink: 0;
 }
-
 .carrusel-btn {
   position: absolute;
   top: 50%;
@@ -64,13 +113,8 @@ h1 {
   cursor: pointer;
   border-radius: 50%;
 }
-
-.carrusel-btn.prev {
-  left: 10px;
-}
-.carrusel-btn.next {
-  right: 10px;
-}
+.carrusel-btn.prev { left: 10px; }
+.carrusel-btn.next { right: 10px; }
 
 /* Contacto */
 .btn-form {
@@ -103,75 +147,9 @@ h1 {
 
 /* RESPONSIVE */
 @media (min-width: 768px) {
-  .carrusel img {
-    max-width: 400px;
-  }
+  .carrusel img { max-width: 400px; }
 }
 @media (min-width: 1024px) {
-  .Inicio {
-    max-width: 120px; /* más chico en pantallas grandes */
-  }
-  .carrusel img {
-    max-width: 250px; /* todas parejas en PC */
-  }
-}
-
-/* Menú principal */
-.menu {
-  margin-top: 15px;
-}
-.menu ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  padding: 10px 0;
-  background: #fff; /* fondo blanco */
-  border-bottom: 2px solid #ddd;
-}
-
-.menu ul li {
-  position: relative;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  padding: 10px 15px; /* más espacio clickable */
-  display: block;
-}
-
-.menu a:hover {
-  color: #0077cc;
-  background: #f1f1f1; /* resaltado al pasar */
-  border-radius: 5px;
-}
-
-/* Submenú desplegable */
-.submenu-items {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 180px;
-  background: #fff;
-  list-style: none;
-  padding: 10px 0;
-  box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-  z-index: 10;
-}
-
-.submenu-items li {
-  padding: 5px 20px;
-}
-
-.submenu-items li a {
-  color: #333;
-  font-weight: normal;
-}
-
-.submenu:hover .submenu-items {
-  display: block;
+  .Inicio { max-width: 120px; }
+  .carrusel img { max-width: 250px; }
 }
