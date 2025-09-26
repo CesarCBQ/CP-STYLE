@@ -23,3 +23,4 @@ document.querySelectorAll('.carrusel').forEach(carrusel => {
 
   window.addEventListener('resize', updateCarousel);
 });
+

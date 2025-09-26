@@ -153,3 +153,32 @@ h1 {
   .Inicio { max-width: 120px; }
   .carrusel img { max-width: 250px; }
 }
+
+/* Imagen inicio normal (index) */
+.Inicio {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* Imagen más grande solo en cadenas */
+.Inicio.grande {
+  max-width: 350px;   /* más grande */
+  margin-top: 20px;
+}
+
+/* Menú */
+.menu {
+  margin-top: 0; /* lo pegamos arriba */
+}
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  padding: 10px 0;
+  background: #fff;
+  border-bottom: 2px solid #ddd;
+}
