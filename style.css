@@ -190,4 +190,42 @@ h1 {
   width: 100%;
   height: 250px; /* Ajusta este valor según lo que quieras que se vea */
 }
+/* ===== HERO SECTION ===== */
+.hero-section {
+  width: 100%;
+  height: 100vh; /* pantalla completa */
+  background-image: url("Imagenes/cp.jpg");
+  background-size: cover;       /* llena todo el espacio */
+  background-position: center;  /* siempre centrada */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* Fondo semitransparente opcional para texto */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2rem; }
+  .hero-subtitle { font-size: 1rem; }
+}
 
