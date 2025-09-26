@@ -182,3 +182,12 @@ h1 {
   background: #fff;
   border-bottom: 2px solid #ddd;
 }
+.header {
+  background-image: url("Imagenes/cp.jpg");
+  background-size: cover;      /* La imagen cubre todo el ancho */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat;/* Evita repeticiones */
+  width: 100%;
+  height: 250px; /* Ajusta este valor según lo que quieras que se vea */
+}
+
