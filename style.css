@@ -123,21 +123,28 @@ h1 {
 .menu ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
-  padding: 0;
+  padding: 10px 0;
+  background: #fff; /* fondo blanco para resaltar */
+  border-bottom: 2px solid #ddd; /* línea separadora */
 }
+
 .menu ul li {
   position: relative;
 }
+
 .menu a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
+
 .menu a:hover {
   color: #0077cc;
 }
+
 
 /* Submenú desplegable */
 .submenu-items {
