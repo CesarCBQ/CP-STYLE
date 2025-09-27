@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -12,111 +13,27 @@ body {
   overflow-x: hidden;
 }
 
-/* Logo */
-.logo-container {
-  text-align: center;
-  margin: 20px 0;
-}
-.Inicio {
-  max-width: 180px;
-  height: auto;
-  border-radius: 20px;
-}
-h1 {
-  color: #6b4226;
-  font-size: 2rem;
-  margin-top: 10px;
-}
-
-/* Menú principal */
-.menu {
-  background: #fff;
-  border-bottom: 2px solid #ddd;
-}
-.menu ul {
-  list-style: none;
+/* Imagen de inicio ocupando toda la pantalla */
+.imagen-inicio {
+  width: 100%;
+  height: 100vh; /* ocupa toda la altura de la pantalla */
   display: flex;
   justify-content: center;
-  gap: 30px;
-  padding: 15px 0;
-}
-.menu ul li {
-  position: relative;
-}
-.menu a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  padding: 10px 15px;
-  display: block;
-  transition: all 0.3s ease;
-}
-.menu a:hover {
-  background: #6b4226;
-  color: #fff;
-  border-radius: 6px;
-}
-
-/* Submenú */
-.submenu-items {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 180px;
-  background: #fff;
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  z-index: 50;
-}
-.submenu-items li a {
-  padding: 10px 20px;
-  font-weight: normal;
-}
-.submenu-items li a:hover {
-  background: #f5f5f5;
-  color: #6b4226;
-}
-.submenu:hover .submenu-items {
-  display: block;
-}
-
-/* Carrusel */
-.carrusel {
-  position: relative;
+  align-items: center;
   overflow: hidden;
-  margin: 2rem 0;
+  margin-top: 56px; /* compensa el menú fijo */
+  position: relative;
+  z-index: -1; /* manda la imagen detrás del menú */
 }
-.carrusel-track {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
-}
-.carrusel img {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  border-radius: 12px;
-  flex-shrink: 0;
-}
-.carrusel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(107, 66, 38, 0.7);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  border-radius: 50%;
-}
-.carrusel-btn.prev { left: 10px; }
-.carrusel-btn.next { right: 10px; }
 
-/* Contacto */
+.imagen-inicio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* cubre la pantalla */
+  object-position: center;
+}
+
+/* Botón del formulario */
 .btn-form {
   display: inline-block;
   background: #6b4226;
@@ -143,135 +60,4 @@ h1 {
   width: 100%;
   border-radius: 50%;
   box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
-}
-
-/* RESPONSIVE */
-@media (min-width: 768px) {
-  .carrusel img { max-width: 400px; }
-}
-@media (min-width: 1024px) {
-  .Inicio { max-width: 120px; }
-  .carrusel img { max-width: 250px; }
-}
-
-/* Imagen inicio normal (index) */
-.Inicio {
-  display: block;
-  margin: 0 auto;
-  max-width: 200px;
-  height: auto;
-  border-radius: 20px;
-}
-
-/* Imagen más grande solo en cadenas */
-.Inicio.grande {
-  max-width: 350px;   /* más grande */
-  margin-top: 20px;
-}
-
-/* Menú */
-.menu {
-  margin-top: 0; /* lo pegamos arriba */
-}
-.menu ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  padding: 10px 0;
-  background: #fff;
-  border-bottom: 2px solid #ddd;
-}
-.header {
-  background-image: url("Imagenes/cp.jpg");
-  background-size: cover;      /* La imagen cubre todo el ancho */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat;/* Evita repeticiones */
-  width: 100%;
-  height: 250px; /* Ajusta este valor según lo que quieras que se vea */
-}
-/* Banner */
-.hero-banner {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.hero-banner img {
-  width: 100%;
-  height: auto;            /* mantiene proporciones */
-  object-fit: cover;       /* rellena sin deformar */
-  object-position: center; /* centrada siempre */
-  display: block;
-}
-
-/* Texto encima de la imagen */
-.hero-text {
-  position: absolute;
-  top: 50%;                /* centrado vertical */
-  left: 50%;               /* centrado horizontal */
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  background: rgba(0,0,0,0.4); /* fondo semitransparente */
-  padding: 20px 40px;
-  border-radius: 10px;
-}
-
-.hero-text h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.hero-text p {
-  font-size: 1.5rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-text h1 { font-size: 2rem; }
-  .hero-text p { font-size: 1rem; }
-}
-
-/* Ajuste para que el banner muestre la imagen completa centrada */
-.hero-banner {
-  width: 100%;
-  height: 50vh;               /* mitad de la pantalla */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f8f5f2;        /* fondo neutro */
-  margin-top: 56px;           /* evita que el menú fijo la tape */
-}
-
-.hero-banner img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;        /* muestra la imagen completa sin recortes */
-  display: block;
-}
-/* Imagen de inicio ocupando toda la pantalla de ancho y 50% de alto */
-/* Imagen de inicio ocupando toda la pantalla de ancho y 100% de alto */
-.imagen-inicio {
-  width: 100%;
-  height: 100vh; /* Ocupa todo el alto de la pantalla */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  margin-top: 56px; /* para compensar el menú fijo */
-  position: relative; /* Asegura que los elementos del menú se mantengan por encima */
-  z-index: -1; /* Asegura que la imagen esté detrás de los otros elementos */
-}
-
-.imagen-inicio img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Esto asegura que la imagen se recorte para cubrir toda la pantalla */
-  object-position: center; /* Centra la imagen en caso de que se recorte */
-}
-
-/* Menú de navegación: asegúrate de que esté por encima de la imagen */
-.navbar {
-  z-index: 10; /* Hace que el menú esté por encima de la imagen */
 }
