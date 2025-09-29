@@ -1,102 +1,102 @@
-/* Reset de márgenes y padding para un diseño limpio */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Cuerpo del documento */
+/* === FUENTE Y BASE === */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f1ea; /* Fondo color café claro */
-  color: #2c2c2c; /* Texto color oscuro para contraste */
-  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5eee6; /* Beige claro */
+  color: #3a2e2b; /* Café oscuro */
+  margin: 0;
+  padding-top: 70px; /* Espacio por navbar fija */
 }
 
-/* Menú de navegación */
+/* === NAVBAR === */
 .navbar {
-  background-color: #fff; /* Blanco para el fondo */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+  background-color: #a17a5b !important; /* Café medio */
+  color: #fff;
 }
 
-.navbar .navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #6f4f1f; /* Café del logo */
-}
-
+.navbar .navbar-brand,
 .navbar .nav-link {
-  color: #6f4f1f; /* Café del logo */
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
+  color: #fff !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.navbar .nav-link:hover {
-  background-color: #6f4f1f;
-  color: #fff;
-  border-radius: 5px;
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #000 !important;
 }
 
-.navbar .nav-item.active .nav-link {
-  background-color: #6f4f1f;
-  color: #fff;
-}
-
-/* Título de la página */
-h2 {
+/* === HEADER / BANNER === */
+.hero-banner {
+  background-color: #f5eee6;
   text-align: center;
-  font-size: 2.5rem;
-  color: #6f4f1f;
-  margin-top: 100px; /* Espacio debajo del navbar */
+  padding: 2rem 1rem;
 }
 
-/* Descripción */
+.hero-banner img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === TÍTULO PRINCIPAL === */
+.Titulo {
+  font-size: 2rem;
+  text-align: center;
+  margin: 40px 0 20px;
+  color: #6f4f1f; /* Café intenso */
+  font-weight: bold;
+}
+
+/* === DESCRIPCIÓN === */
 .Description {
   text-align: center;
-  font-size: 1.2rem;
-  color: #6f4f1f;
-  margin-bottom: 40px;
-  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #3a2e2b;
+  margin-bottom: 2rem;
 }
 
-/* Carrusel */
+/* === CARRUSEL DE IMÁGENES === */
 .carrusel {
   position: relative;
-  max-width: 100%;
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid #a17a5b;
+  background-color: #fff;
+  margin-bottom: 3rem;
 }
 
 .carrusel-track {
   display: flex;
-  justify-content: center;
-  gap: 15px;
+  transition: transform 0.5s ease;
 }
 
-.carrusel-track img {
+.carrusel img {
   width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: auto;
+  flex-shrink: 0;
+  display: block;
 }
 
+/* === BOTONES DEL CARRUSEL === */
 .carrusel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #a17a5b;
   color: white;
   border: none;
-  padding: 10px;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  padding: 0 15px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1;
   border-radius: 50%;
+  opacity: 0.8;
+}
+
+.carrusel-btn:hover {
+  opacity: 1;
 }
 
 .carrusel-btn.prev {
@@ -107,81 +107,63 @@ h2 {
   right: 10px;
 }
 
-/* Contacto */
+/* === CONTACTO === */
 .contacto {
   text-align: center;
-  font-size: 1.2rem;
-  color: #6f4f1f;
-  margin-top: 30px;
-}
-
-/* Caja de regalo y detalles del producto */
-.producto-detalle {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 40px;
-  flex-wrap: wrap;
-}
-
-.producto-detalle img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.producto-detalle .detalle {
-  max-width: 500px;
+  color: #3a2e2b;
   font-size: 1.1rem;
-  color: #6f4f1f;
-  line-height: 1.8;
-  margin-top: 20px;
+  margin: 3rem 0;
 }
 
-.producto-detalle .detalle ul {
-  list-style: none;
-  padding-left: 20px;
-}
-
-.producto-detalle .detalle li {
-  margin: 10px 0;
-}
-
-/* Botón de formulario */
 .btn-form {
   display: inline-block;
   background-color: #6f4f1f;
   color: #fff;
-  padding: 12px 20px;
-  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  margin-top: 15px;
 }
 
 .btn-form:hover {
-  background-color: #4e3623;
+  background-color: #3a2e2b;
 }
 
-/* Botón flotante WhatsApp */
+/* === BOTÓN FLOTANTE WHATSAPP === */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25d366;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
   border-radius: 50%;
-  padding: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-}
-
-.whatsapp-float:hover {
-  background-color: #128c7e;
-  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .whatsapp-float img {
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: auto;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .Titulo {
+    font-size: 1.6rem;
+  }
+
+  .Description {
+    font-size: 1rem;
+  }
+
+  .carrusel-btn {
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
+
+  .btn-form {
+    width: 80%;
+  }
 }
