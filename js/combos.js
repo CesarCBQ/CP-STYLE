@@ -1,22 +1,33 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const carruseles = document.querySelectorAll(".carrusel");
+const track = document.querySelector('.carrusel-track');
+const slides = Array.from(track.children);
+const prevButton = document.querySelector('.carrusel-btn.prev');
+const nextButton = document.querySelector('.carrusel-btn.next');
 
-  carruseles.forEach(carrusel => {
-    const track = carrusel.querySelector(".carrusel-track");
-    const prevBtn = carrusel.querySelector(".carrusel-btn.prev");
-    const nextBtn = carrusel.querySelector(".carrusel-btn.next");
-    let index = 0;
+let currentIndex = 0;
 
-    // Mover al siguiente elemento
-    nextBtn.addEventListener("click", () => {
-      index = (index + 1) % track.children.length;  // Asegura que se regrese al primer elemento cuando llegue al final
-      track.style.transform = `translateX(-${index * 100}%)`; // Desplazamiento de las imágenes
-    });
+function updateCarousel() {
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+}
 
-    // Mover al elemento anterior
-    prevBtn.addEventListener("click", () => {
-      index = (index - 1 + track.children.length) % track.children.length; // Asegura que se regrese al último elemento cuando llegue al principio
-      track.style.transform = `translateX(-${index * 100}%)`; // Desplazamiento de las imágenes
-    });
-  });
+nextButton.addEventListener('click', () => {
+  if (currentIndex < slides.length - 1) {
+    currentIndex++;
+  } else {
+    currentIndex = 0; // Loop al inicio
+  }
+  updateCarousel();
 });
+
+prevButton.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    currentIndex = slides.length - 1; // Loop al final
+  }
+  updateCarousel();
+});
+
+// Para cargar bien la posición al iniciar
+window.addEventListener('resize', updateCarousel);
+updateCarousel();

@@ -3,6 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+header {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  border-radius: 0; /* quitar bordes redondeados si quieres imagen de portada */
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -24,42 +40,58 @@ h1 {
   margin: 2rem 0;
 }
 
-/* Carrusel */
 .carrusel {
   position: relative;
-  overflow: hidden;
-  margin: 2rem 0;
-  text-align: center;
+  width: 100%;
+  max-width: 600px; /* Ajusta al ancho deseado */
+  margin: 2rem auto;
+  overflow: hidden; /* Oculta las imágenes que salen fuera */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .carrusel-track {
   display: flex;
-  transition: transform 0.4s ease-in-out;
-}
-
-.carrusel img {
+  transition: transform 0.5s ease-in-out;
   width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  border-radius: 12px;
-  flex-shrink: 0;
 }
 
+.carrusel-track img {
+  width: 100%;
+  flex-shrink: 0; /* Para que no se reduzca */
+  object-fit: cover;
+  user-select: none;
+}
+
+/* Botones de navegación */
 .carrusel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(107, 66, 38, 0.7);
+  background-color: rgba(30, 30, 30, 0.7);
   color: white;
   border: none;
   font-size: 2rem;
-  padding: 0.5rem;
+  padding: 0.2rem 0.6rem;
   cursor: pointer;
   border-radius: 50%;
+  user-select: none;
+  z-index: 10;
+  transition: background-color 0.3s;
 }
 
-.carrusel-btn.prev { left: 10px; }
-.carrusel-btn.next { right: 10px; }
+.carrusel-btn:hover {
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+.carrusel-btn.prev {
+  left: 10px;
+}
+
+.carrusel-btn.next {
+  right: 10px;
+}
+
 
 /* Contacto */
 .btn-form {
