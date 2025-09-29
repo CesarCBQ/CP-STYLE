@@ -1,51 +1,184 @@
-/* Asegúrate que el contenedor principal tenga un ancho y margen centrado */
-main.container {
-  max-width: 900px; /* O el tamaño que quieras */
-  margin: 80px auto 40px; /* margen superior para separar del nav */
-  padding: 0 20px; /* un poco de padding horizontal para que no toque bordes */
-  background-color: #f8f5f2; /* igual que el body, para mantener coherencia */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centrar contenido */
+/* Reset de márgenes y padding para un diseño limpio */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Ajusta el header para que la imagen se centre y no tenga límite tan pequeño */
-header.hero-banner {
+/* Cuerpo del documento */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f1ea; /* Fondo color café claro */
+  color: #2c2c2c; /* Texto color oscuro para contraste */
+  line-height: 1.6;
+}
+
+/* Menú de navegación */
+.navbar {
+  background-color: #fff; /* Blanco para el fondo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  position: fixed;
   width: 100%;
-  max-width: 900px;
-  margin: 40px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f8f5f2;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Asegura que la imagen del banner tome todo el ancho disponible pero mantenga proporción */
-header.hero-banner img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 20px;
-  object-fit: contain; /* para que no se corte */
+.navbar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6f4f1f; /* Café del logo */
 }
 
-/* Centra y da espacio a los títulos y texto */
-h2.Titulo {
-  text-align: center;
-  margin: 20px 0;
-  color: #6b4226;
-}
-
-/* También centra el párrafo descriptivo */
-.Description {
-  max-width: 600px;
-  text-align: center;
-  margin: 0 auto 30px;
-  color: #444;
+.navbar .nav-link {
+  color: #6f4f1f; /* Café del logo */
   font-size: 1rem;
-  line-height: 1.5;
+  padding: 0.5rem 1rem;
 }
 
-/* Para el carrusel, céntralo también */
+.navbar .nav-link:hover {
+  background-color: #6f4f1f;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.navbar .nav-item.active .nav-link {
+  background-color: #6f4f1f;
+  color: #fff;
+}
+
+/* Banner */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+/* Título principal */
+.Titulo {
+  text-align: center;
+  margin-top: 80px; /* Espacio debajo del navbar */
+  font-size: 2.5rem;
+  color: #6f4f1f;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Descripción */
+.Description {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6f4f1f;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+/* Carrusel */
 .carrusel {
-  margin: 0 auto 40px;
+  position: relative;
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+
+.carrusel-track {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.carrusel-track img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.carrusel-btn.prev {
+  left: 10px;
+}
+
+.carrusel-btn.next {
+  right: 10px;
+}
+
+/* Botón de WhatsApp flotante */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Botón de formulario */
+.btn-form {
+  display: inline-block;
+  background-color: #6f4f1f;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-form:hover {
+  background-color: #4e3623;
+}
+
+/* Contacto */
+.contacto {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6f4f1f;
+  margin-top: 30px;
+}
+
+.contacto a {
+  display: inline-block;
+  margin-top: 10px;
 }
