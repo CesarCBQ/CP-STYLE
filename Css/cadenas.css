@@ -1,148 +1,77 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Fuente general */
 body {
-  font-family: Arial, sans-serif;
-  background: #f8f5f2;
-  color: #333;
-  line-height: 1.6;
-  overflow-x: hidden;
-  padding-top: 70px; /* Espacio para el menú fijo */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #3a2e2b;
+  color: #f5eee6;
+  margin: 0;
+  padding-top: 70px; /* espacio para navbar fija */
 }
 
-/* Banner inicial */
+/* Navbar */
+.navbar {
+  background-color: #a17a5b !important;
+  color: #ffffff;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #000000 !important;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f5eee6;
+  color: #3a2e2b;
+}
+
 .hero-img {
-  width: 100%;
-  height: 50vh;
-  object-fit: cover;
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 15px;
 }
 
 .hero-title {
-  text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
-  margin-top: 15px;
-  color: #5a3d2b;
 }
 
-/* Logo */
-.logo-container {
+/* Título principal */
+.Titulo {
   text-align: center;
-  margin: 20px 0;
+  margin: 40px 0 20px;
+  font-size: 2rem;
+  color: #a17a5b;
 }
 
-.Inicio {
-  max-width: 180px;
-  height: auto;
-  border-radius: 20px;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Estilo más grande solo en cadenas */
-.Inicio.grande {
-  max-width: 350px;
-  margin-top: 20px;
-}
-
-/* Encabezado con fondo */
-.header {
-  background-image: url("Imagenes/cp.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 250px;
-}
-
-/* Menú de navegación */
-.navbar {
-  z-index: 10;
-}
-
-.menu {
-  background: #fff;
-  border-bottom: 2px solid #ddd;
-}
-
-.menu ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 15px 0;
-}
-
-.menu ul li {
-  position: relative;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  padding: 10px 15px;
-  display: block;
-  transition: all 0.3s ease;
-}
-
-.menu a:hover {
-  background: #6b4226;
-  color: #fff;
-  border-radius: 6px;
-}
-
-/* Submenú */
-.submenu-items {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 180px;
-  background: #fff;
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  z-index: 50;
-}
-
-.submenu-items li a {
-  padding: 10px 20px;
-  font-weight: normal;
-}
-
-.submenu-items li a:hover {
-  background: #f5f5f5;
-  color: #6b4226;
-}
-
-.submenu:hover .submenu-items {
-  display: block;
-}
-
-/* Carrusel */
+/* Carruseles */
 .carrusel {
   position: relative;
+  margin-bottom: 40px;
   overflow: hidden;
-  margin: 2rem 0;
+  border: 2px solid #a17a5b;
+  border-radius: 10px;
+  background-color: #000000;
 }
 
 .carrusel-track {
   display: flex;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .carrusel img {
   width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  border-radius: 12px;
+  height: auto;
+  display: block;
   flex-shrink: 0;
 }
 
@@ -150,13 +79,13 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(107, 66, 38, 0.7);
+  background-color: #a17a5b;
   color: white;
   border: none;
   font-size: 2rem;
-  padding: 0.5rem;
+  padding: 0 15px;
   cursor: pointer;
-  border-radius: 50%;
+  z-index: 1;
 }
 
 .carrusel-btn.prev {
@@ -170,24 +99,28 @@ body {
 /* Contacto */
 .contacto {
   text-align: center;
-  margin-top: 2rem;
+  font-size: 1.2rem;
+  margin: 40px 0;
+  color: #ffffff;
 }
 
 .btn-form {
   display: inline-block;
-  background: #6b4226;
-  color: white;
+  margin-top: 15px;
+  background-color: #a17a5b;
+  color: #fff;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 5px;
   text-decoration: none;
-  margin-top: 1rem;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
 .btn-form:hover {
-  background: #8a5b3c;
+  background-color: #3a2e2b;
 }
 
-/* Botón flotante WhatsApp */
+/* WhatsApp botón flotante */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -199,96 +132,16 @@ body {
 
 .whatsapp-float img {
   width: 100%;
-  border-radius: 50%;
-  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+  height: auto;
 }
 
-/* Banner Hero (opcional alternativo con texto centrado) */
-.hero-banner {
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f8f5f2;
-  margin-top: 56px;
-}
-
-.hero-banner img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  background: rgba(0,0,0,0.4);
-  padding: 20px 40px;
-  border-radius: 10px;
-}
-
-.hero-text h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.hero-text p {
-  font-size: 1.5rem;
-}
-
-/* Imagen inicio pantalla completa */
-.imagen-inicio {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  margin-top: 56px;
-  position: relative;
-  z-index: -1;
-}
-
-.imagen-inicio img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 768px) {
-  .hero-text h1 {
+  .hero-title {
     font-size: 2rem;
   }
 
-  .hero-text p {
-    font-size: 1rem;
-  }
-
-  .carrusel img {
-    max-width: 100%;
-  }
-}
-
-@media (min-width: 768px) {
-  .carrusel img {
-    max-width: 400px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .Inicio {
-    max-width: 120px;
-  }
-
-  .carrusel img {
-    max-width: 250px;
+  .btn-form {
+    width: 80%;
   }
 }
