@@ -6,14 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevBtn = carrusel.querySelector(".carrusel-btn.prev");
     const nextBtn = carrusel.querySelector(".carrusel-btn.next");
     let index = 0;
-
-  document.getElementById('playBtn').addEventListener('click', function() {
-  document.getElementById('video1').play();
-  document.getElementById('video2').play();
-  document.getElementById('video3').play();
-});
-
-    nextBtn.addEventListener("click", () => {
+nextBtn.addEventListener("click", () => {
       index = (index + 1) % track.children.length;
       track.style.transform = `translateX(-${index * 100}%)`;
     });
@@ -23,5 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
       track.style.transform = `translateX(-${index * 100}%)`;
     });
   });
-});
 
+  // 🔹 Asegurarse de que el botón existe
+  const playBtn = document.getElementById('playBtn');
+  if (playBtn) {
+    playBtn.addEventListener('click', () => {
+      const videos = ['video1', 'video2', 'video3'];
+      videos.forEach(id => {
+        const vid = document.getElementById(id);
+        if (vid) vid.play();
+      });
+    });
+  }
+});
