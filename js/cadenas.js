@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = carrusel.querySelector(".carrusel-btn.next");
     let index = 0;
 
+  document.getElementById('playBtn').addEventListener('click', function() {
+  document.getElementById('video1').play();
+  document.getElementById('video2').play();
+  document.getElementById('video3').play();
+});
+
     nextBtn.addEventListener("click", () => {
       index = (index + 1) % track.children.length;
       track.style.transform = `translateX(-${index * 100}%)`;
